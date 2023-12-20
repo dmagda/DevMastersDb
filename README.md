@@ -7,6 +7,6 @@ Hello my fellow developer! In this repository, you'll find sample applications, 
 
 Have fun coding and keep mastering databases!
 
-* [Getting Started With PostgresML](postgresml_getting_started.md)
+* [Getting Started With PostgresML](postgres/postgresml_getting_started.md)
 
 
