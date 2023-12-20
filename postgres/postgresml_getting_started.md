@@ -2,7 +2,7 @@
 
 The video introduces you to the [PostgresML extension](https://postgresml.org) that turns Postgres into a complete MLOps platform.
 
-TBD picture
+[![@DevMastersDB](https://github.com/dmagda/DevMastersDb/assets/1537233/de462b5f-b8f4-41e9-a2da-748076cdafe2)](https://www.youtube.com/watch?v=Gtz883daf1Y)
 
 Follow the guide to learn how to:
 
