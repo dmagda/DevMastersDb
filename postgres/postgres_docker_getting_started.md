@@ -17,19 +17,24 @@ Follow this guide to learn:
     ```shell
     docker network create my-network
     ```
-2. Start the Postgres container of version 16:
+2. Create `postgres-volume` directory for the Postgres container's volume in your home dir. The volume is handy if you'd like to keep the data even if the container is recreated from scratch:
+    ```shell
+    mkdir ~/postgres-volume
+    ```
+3. Start the Postgres container of version 16:
     ```shell
     docker run --name postgres --net my-network \
         -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=password \
         -p 5432:5432 \
+        -v ~/postgresql-volume/:/var/lib/postgresql/data \
         -d postgres:16.1
     ```
     You can pick another version from the [Postgres' official Docker repository](https://hub.docker.com/_/postgres).
-3. Make sure the container is running:
+4. Make sure the container is running:
     ```shell
     docker container ls -f name=postgres
     ```
-4. Connect to the container and open a database session with *psql*:
+5. Connect to the container and open a database session with *psql*:
     ```shell
     docker exec -it postgres psql -U postgres 
     ```
