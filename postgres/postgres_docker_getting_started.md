@@ -62,7 +62,7 @@ Use the opened psql session to create a sample table and load it with mock data:
 
 Start DBeaver on your host's operating system (OS) and connect to the Postgres instance running in the container.
 
-TBD screenshot
+![Screenshot 2023-12-25 at 9 44 25 PM](https://github.com/dmagda/DevMastersDb/assets/1537233/16aaf5ef-8b0f-4e19-9afb-5937d10f2c6d)
 
 Use the following connection parameters:
 * *Host* - localhost or 127.0.0.1
