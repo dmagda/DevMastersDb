@@ -17,7 +17,7 @@ Follow this guide to learn:
     ```shell
     docker network create my-network
     ```
-2. Create `postgres-volume` directory for the Postgres container's volume in your home dir. The volume is handy if you'd like to keep the data even if the container is recreated from scratch:
+2. Create `postgres-volume` directory for the Postgres container's volume in your home dir. The volume is handy if you'd like to access the logs easily and don't want to lose data when the container is recreated from scratch:
     ```shell
     mkdir ~/postgres-volume
     ```
