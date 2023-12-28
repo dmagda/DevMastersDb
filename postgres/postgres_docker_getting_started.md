@@ -2,7 +2,7 @@
 
 Discover the fastest way to get a fully functional PostgreSQL instance running in Docker with this comprehensive beginner's guide. Master the art of setting up PostgreSQL in Docker, connecting to your database with various SQL tools, and integrating with a sample app on your host system or within a container. Perfect for beginners and seasoned pros alike!
 
-[![@DevMastersDB](https://github.com/dmagda/DevMastersDb/assets/1537233/de462b5f-b8f4-41e9-a2da-748076cdafe2)](https://www.youtube.com/watch?v=F8I3WYSAXYQ)
+[![@DevMastersDB](https://github.com/dmagda/DevMastersDb/assets/1537233/dc77dbea-23f6-4bee-8127-b487cf3416d8)](https://www.youtube.com/watch?v=F8I3WYSAXYQ)
 
 Follow this guide to learn:
 * How to start Postgres in a Docker container
