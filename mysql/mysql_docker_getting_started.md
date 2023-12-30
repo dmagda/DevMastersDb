@@ -82,7 +82,7 @@ Use the opened mysql client session to create a sample table and load it with mo
 
 Start DBeaver on your host's operating system (OS) and connect to the MySQL instance running in the container.
 
-TBD picture:
+![DBeaver Connection](https://github.com/dmagda/DevMastersDb/assets/1537233/a2c5c006-2ac3-4a2f-8550-3ac46abbff11)
 
 Use the following connection parameters:
 * *Host* - localhost or 127.0.0.1
