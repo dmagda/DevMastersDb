@@ -80,7 +80,9 @@ Use the opened mysql client session to create a sample table and load it with mo
 
 ## Connect With DataGrip
 
-Start DataGrip on your host's operating system (OS) and connect to the MySQL instance running in the container.
+Start [DataGrip](https://www.jetbrains.com/datagrip/) on your host's operating system (OS) and connect to the MySQL instance running in the container.
+
+![DataGrip Connection](https://github.com/dmagda/DevMastersDb/assets/1537233/67360237-1959-4d71-83af-7ca8d20dcee2)
 
 Use the following connection parameters:
 * *Host* - localhost or 127.0.0.1
