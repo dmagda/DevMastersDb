@@ -8,7 +8,7 @@ Follow this guide to learn:
 * How to start MySQL in a Docker container
 * How to use the mysql client to open a database session within the container
 * How to generate sample data with generate series
-* How to connect to MySQL from the host with DBeaver
+* How to connect to MySQL from the host with DataGrip
 * How to connect to MySQL from an app running on the host OS and within a container
 
 ## Start MySQL in Docker
@@ -78,11 +78,9 @@ Use the opened mysql client session to create a sample table and load it with mo
     select * from pizza_order limit 5;
     ```
 
-## Connect With DBeaver
+## Connect With DataGrip
 
-Start DBeaver on your host's operating system (OS) and connect to the MySQL instance running in the container.
-
-![DBeaver Connection](https://github.com/dmagda/DevMastersDb/assets/1537233/a2c5c006-2ac3-4a2f-8550-3ac46abbff11)
+Start DataGrip on your host's operating system (OS) and connect to the MySQL instance running in the container.
 
 Use the following connection parameters:
 * *Host* - localhost or 127.0.0.1
