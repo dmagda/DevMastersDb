@@ -29,7 +29,7 @@ Follow this guide to learn:
         -e MYSQL_USER=user \
         -e MYSQL_PASSWORD=password \
         -e MYSQL_DATABASE=sample_db \
-        -v $HOME/mysql-volume:/var/lib/mysql \
+        -v ~/mysql-volume:/var/lib/mysql \
         -d mysql:latest
     ```
     You can pick another version from the [MySQL official Docker repository](https://hub.docker.com/_/mysql).
