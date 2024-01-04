@@ -1,8 +1,8 @@
-# Getting Started With MySQL in Docker: From Setup to Sample App
+# MySQL in Docker: Comprehensive Guide
 
 Discover the fastest way to get a fully functional MySQL instance running in Docker with this comprehensive beginner's guide. Master the art of setting up MySQL in Docker, connecting to your database with various SQL tools, and integrating with a sample app on your host system or within a container. Perfect for beginners and seasoned pros alike!
 
-TBD: video
+[![@DevMastersDB](https://github.com/dmagda/DevMastersDb/assets/1537233/c14c65ad-8d38-4ea8-963f-c9d50b1b779e)](https://youtu.be/CeuGey5rOMw)
 
 Follow this guide to learn:
 * How to start MySQL in a Docker container
