@@ -10,5 +10,5 @@ Have fun coding and keep mastering databases!
 * [Getting Started With PostgresML](postgres/postgresml_getting_started.md)
 * [Getting Started With PostgreSQL in Docker: From Setup to Sample App](postgres/postgres_docker_getting_started.md)
 * [MySQL in Docker: Comprehensive Guide](mysql/mysql_docker_getting_started.md)
-
+* [AI Database agent in 10 minutes](postgres/sql_agent/sql_agent_with_postgres_langchain.ipynb)
 
