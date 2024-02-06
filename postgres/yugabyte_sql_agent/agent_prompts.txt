@@ -1,0 +1,93 @@
+V1:
+Query the database using PostgreSQL syntax.
+
+It is not necessary to search on all columns, only those necessary for a query. 
+    
+Generate a PostgreSQL query using the input: {input_text}. 
+    
+Responds like a human would.
+
+
+V2:
+Query the database using PostgreSQL syntax.
+
+It is not necessary to search on all columns, only those necessary for a query. 
+
+If asked to search for a specific genre, then don't add the "id" property of the genre JSON to the query.
+
+Generate a PostgreSQL query using the input: {input_text}. 
+
+Responds like a human would.
+
+
+V3:
+    Query the database using PostgreSQL syntax.
+
+    It is not necessary to search on all columns, only those necessary for a query. 
+
+    If asked to search for a genre, then don't add the "id" property of the genre JSON to the query.
+    If asked to aggregate on the genre, then expand the genre's JSON array to a set of JSON values and group by the genre's "name" property.
+    
+    Generate a PostgreSQL query using the input: {input_text}. 
+    
+    Responds like a human would.
+
+V3.5:
+    Query the database using PostgreSQL syntax.
+
+    It is not necessary to search on all columns, only those necessary for a query. 
+
+    If asked to search for a genre, then don't add the "id" property of the genre JSON to the query.
+    If asked to aggregate on the genre, then expand the genre's JSON array to a set of JSON values and group by the genre's "name" property.
+    An example of this is shown below:
+    SELECT genre->>'name' as genre, COUNT(*) as count
+    FROM movie, jsonb_array_elements(genres) AS genre
+    GROUP BY genre->>'name';
+    
+    Generate a PostgreSQL query using the input: {input_text}. 
+    
+    Responds like a human would.
+
+V4:
+    Query the database using PostgreSQL syntax.
+
+    It is not necessary to search on all columns, only those necessary for a query. 
+
+    If asked to search for a genre, then don't add the "id" property of the genre JSON to the query.
+    If asked to aggregate on the genre, then expand the genre's JSON array to a set of JSON values and group by the genre's "name" property.
+    An example of this is shown below:
+    SELECT genre->>'name' as genre, COUNT(*) as count
+    FROM movie, jsonb_array_elements(genres) AS genre
+    GROUP BY genre->>'name';
+    
+    Apply the same logic to the "production_companies" column. For instance, this is a sample query:
+    SELECT studio->>'name' as studio, COUNT(*) as count
+    FROM movie, jsonb_array_elements(production_companies) AS studio
+    GROUP BY studio->>'name';
+
+    Generate a PostgreSQL query using the input: {input_text}. 
+    
+    Responds like a human would.
+
+V5:
+    Query the database using PostgreSQL syntax.
+
+    It is not necessary to search on all columns, only those necessary for a query. 
+
+    If asked to search for a genre, then don't add the "id" property of the genre JSON to the query.
+    If asked to aggregate on the genre, then expand the genre's JSON array to a set of JSON values and group by the genre's "name" property.
+    An example of this is shown below:
+    SELECT genre->>'name' as genre, COUNT(*) as count
+    FROM movie
+    CROSS JOIN jsonb_array_elements(genres) AS genre
+    GROUP BY genre->>'name';
+    
+    Apply the same logic to the "production_companies" column. For instance, this is a sample query:
+    SELECT studio->>'name' as studio, COUNT(*) as count
+    FROM movie
+    CROSS JOIN jsonb_array_elements(production_companies) AS studio
+    GROUP BY studio->>'name';
+
+    Generate a PostgreSQL query using the input: {input_text}. 
+    
+    Responds like a human would.
