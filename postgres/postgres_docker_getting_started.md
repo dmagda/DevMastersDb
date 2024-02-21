@@ -26,7 +26,7 @@ Follow this guide to learn:
     docker run --name postgres --net my-network \
         -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=password \
         -p 5432:5432 \
-        -v ~/postgresql-volume/:/var/lib/postgresql/data \
+        -v ~/postgres-volume/:/var/lib/postgresql/data \
         -d postgres:16.1
     ```
     You can pick another version from the [Postgres' official Docker repository](https://hub.docker.com/_/postgres).
