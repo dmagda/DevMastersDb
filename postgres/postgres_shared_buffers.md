@@ -5,6 +5,31 @@ PostgreSQL uses shared memory to expedite access to the database by caching data
 **Watch the Video**: <https://www.youtube.com/watch?v=TBmDBw1IIoY>
 [![@DevMastersDB](https://github.com/dmagda/DevMastersDb/assets/1537233/a0ab1395-e3fe-4fec-af5d-1032022d85e9)](https://www.youtube.com/watch?v=TBmDBw1IIoY)
 
+## Start PostgreSQL
+
+1. Create a directory for the Postgres container's volume:
+
+    ```shell
+    rm -r ~/postgres-volume
+    mkdir ~/postgres-volume
+    ```
+
+2. Start a Postgres container:
+
+    ```shell
+    docker run --name postgres \
+        -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=password \
+        -p 5432:5432 \
+        -v ~/postgres-volume/:/var/lib/postgresql/data \
+        -d postgres:latest
+    ```
+
+3. Wait for Postgres to finish the initialization:
+
+    ```shell
+    ! while ! docker exec -it postgres pg_isready -U postgres; do sleep 1; done
+    ```
+
 ## Shared Buffers Basics
 
 Create and populate the table with sample data:
