@@ -3,7 +3,7 @@
 PostgreSQL uses MVCC (Multi-Version Concurrency Control) to execute transactions and queries in parallel over a consistent view/snapshot of data. Each user record may exist in multiple versions simultaneously, with each version visible to a particular set of transactions.
 
 **Watch the Video**: <https://www.youtube.com/watch?v=TBmDBw1IIoY>
-[![@DevMastersDB](https://github.com/dmagda/DevMastersDb/assets/1537233/a0ab1395-e3fe-4fec-af5d-1032022d85e9)](https://www.youtube.com/watch?v=TBmDBw1IIoY)
+[![@DevMastersDB](https://github.com/dmagda/DevMastersDb/assets/1537233/26de7973-c6b1-4e9d-b35d-0e41fca144fa)](https://www.youtube.com/watch?v=TBmDBw1IIoY)
 
 ## Prerequisites
 
