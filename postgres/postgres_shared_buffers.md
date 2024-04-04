@@ -2,8 +2,8 @@
 
 PostgreSQL uses shared memory to expedite access to the database by caching data in memory and to coordinate the execution of requests from multiple standalone Postgres backends/sessions. In this episode, we're looking into shared buffers, one of the areas of shared memory that holds table data for read and write operations.
 
-**Watch the Video**: <https://www.youtube.com/watch?v=TBmDBw1IIoY>
-[![@DevMastersDB](https://github.com/dmagda/DevMastersDb/assets/1537233/a0ab1395-e3fe-4fec-af5d-1032022d85e9)](https://www.youtube.com/watch?v=TBmDBw1IIoY)
+**Watch the Video**: <https://youtu.be/S0LEDGbAnn8>
+[![@DevMastersDB](https://github.com/dmagda/DevMastersDb/assets/1537233/a5ec1944-21ad-49ad-8531-2b78088e6c97)](https://youtu.be/S0LEDGbAnn8)
 
 ## Start PostgreSQL
 
