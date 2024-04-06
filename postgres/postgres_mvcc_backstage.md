@@ -308,6 +308,8 @@ Also, there are special flags. Let's look at them:
     The `hhu` (heap hot updated) flag set to `t` implies that the database needs to continue the search for the latest row version navigating to the row reference by the `t_ctid`.
     The `hot` (heap only tuple) set to `t` means this row version is not referenced from an index.
 
+[Read this article](https://postgrespro.com/blog/pgsql/5967910) for more details on HOT and HHU flags, and the HOT chains:
+
 ## Garbage Collection
 
 Let's update each row by adding $100 to every account:
