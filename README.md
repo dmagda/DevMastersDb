@@ -13,3 +13,4 @@ Have fun coding and keep mastering databases!
 * [AI Database agent in 10 minutes](postgres/sql_agent/sql_agent_with_postgres_langchain.ipynb)
 * [Postgres Internals in Action: MVCC](postgres/postgres_mvcc_backstage.md)
 * [Postgres Internals in Action: Shared Memory and Buffers](postgres/postgres_shared_buffers.md)
+* [Top Five Postgres Extensions for Developer](postgres/top_five_postgres_extensions_for_developers.md)
