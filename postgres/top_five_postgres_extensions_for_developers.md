@@ -325,6 +325,8 @@ In addition to the SQL interface, there are several client libraries that are bu
 
 ## Number 1: pg_anonimize
 
+TBD: try the [postgresql_anonymizer](https://postgresql-anonymizer.readthedocs.io/en/stable/). It looks more solid.
+
 The [pg_anonymize](https://github.com/rjuju/pg_anonymize) extension allows to perform data anonymization transparently on the database. This might be useful if you'd like a subset of the data to be anonymized for specific application users, in testing, etc.
 
 1. Go to your Tembo instance and enable the pg_anonymize extension. Also, you might need to load the extension manually (once, there was an issue on the Tembo end):
