@@ -1,12 +1,12 @@
 # Top Five PostgreSQL Extensions for Application Developers
 
-In this guide, we'll work through top five PostgreSQL extensions for application developers. We'll start with the most obvious extensions such as pgvector and going down to the least known such as pg_anonimyze.
+In this guide, we'll work through the top five PostgreSQL extensions for application developers. We'll start with the most obvious extensions such as pgvector and go down to the least known such as pg_anonimyze.
 
 **Hands-On Video Tutorial: TBD**
 
 ## Deploy Extensible Postgres in Cloud
 
-It's usually not a brainer to deploy a Postgres instance with one of its extension. But it might be a tedious task to get an instance with several extensions.
+It's usually not a brainer to deploy a Postgres instance with one of its extensions. However it might be a tedious task to get an instance with several extensions.
 
 In this tutorial, we're going to experiment with the five extensions. We'll be using [Tembo](http://tembo.io/) that lets us deploy a free instance of Postgres in the cloud and enable 200+ Postgres extensions with a single button click.
 
@@ -79,7 +79,7 @@ We're opening our rank with the most obvious Postgres extension - pgvector. The 
 
 1. Go to your Tembo instance and enable the `pgvector` extension.
 
-2. Preload the sample data set using psql or other tool. The files are located under the `postgres/datasets/movies` folder:
+2. Preload the sample data set using psql or other tools. The files are located under the `postgres/datasets/movies` folder:
 
 ```shell
 psql YOUR_TEMBO_CONNECTION_STRING -f v1.1__create_movie_table.sql
@@ -87,7 +87,7 @@ psql YOUR_TEMBO_CONNECTION_STRING -f v1.1__create_movie_table.sql
 psql YOUR_TEMBO_CONNECTION_STRING -f V1.2__load_movie_dataset_with_embeddings.sql
 ```
 
-Next, update the application logic to support the vector similarity search over the movies data set:
+Next, update the application logic to support the vector similarity search over the movie data set:
 
 1. Install the OpenAI module:
 
@@ -138,13 +138,13 @@ Next, update the application logic to support the vector similarity search over 
 
 ## Number 4: Stored procedures in your programming language
 
-This is a category of extension that let you write and execute stored procedures in your favorite programming language.
+This is a category of extension that lets you write and execute stored procedures in your favorite programming language.
 
 In this tutorial, we'll take a look at the plv8 extension that lets create stored procedures in JavaScript.
 
 1. Go to your Tembo instance and enable plv8.
 
-2. Connect to your Tembo instane using psql or other tool and deploy this function written in JavaScript:
+2. Connect to your Tembo instance using psql or other tool and deploy this function written in JavaScript:
 
     ```sql
     CREATE OR REPLACE FUNCTION whoIsThat() RETURNS json AS $$
@@ -156,7 +156,7 @@ In this tutorial, we'll take a look at the plv8 extension that lets create store
     $$LANGUAGE plv8;
     ```
 
-3. Update and execute the application logic making a call to the stored procedure:
+3. Update and execute the application logic by making a call to the stored procedure:
 
     ```javascript
     (async () => {
@@ -239,15 +239,13 @@ Bonus! With the [PgCompute library](https://github.com/dmagda/pg-compute-node) y
 
 ## Number 3: Foreign Data Wrappers
 
-Postgres foreign data wrappers (FDWs) let Postgres access data stored in other systems - MySQL, flat files, Oracle, S3, MongoDB, etc.
+Postgres foreign data wrappers (FDWs) let Postgres access data stored in other systems - MySQL, flat files, Oracle, S3, MongoDB, and more data sources with services.
 
-With that capability, you can create apps that just use Postgres as a database and let Postgres to pull or update data stored in other systems. From the application standpoint, you don't need to add and maintain logic that accesses other databases and systems.
-
-TBD: code sample, Tembo supports many FDWs
+With that capability, you can create apps that just use Postgres as a database and let Postgres pull or update data stored in other systems. From the application standpoint, you don't need to add and maintain logic that accesses other databases and systems.
 
 ## Number 2: pgmq
 
-The [pgmq](https://github.com/tembo-io/pgmq) lets you use Postgres as lightweight message queue for your apps and microservices. It's similar to [Amazon Simple Queue Service](https://aws.amazon.com/sqs/).
+The [pgmq](https://github.com/tembo-io/pgmq) lets you use Postgres as a lightweight message queue for your apps and microservices. It's similar to [Amazon Simple Queue Service](https://aws.amazon.com/sqs/).
 
 In addition to the SQL interface, there are several client libraries that are built on top of the SQL APIs. In this tutorial, we'll be using pgmq-js - the client-side library for JavaScript.
 
@@ -325,9 +323,9 @@ In addition to the SQL interface, there are several client libraries that are bu
 
 ## Number 1: pg_anonimize
 
-TBD: try the [postgresql_anonymizer](https://postgresql-anonymizer.readthedocs.io/en/stable/). It looks more solid.
-
 The [pg_anonymize](https://github.com/rjuju/pg_anonymize) extension allows to perform data anonymization transparently on the database. This might be useful if you'd like a subset of the data to be anonymized for specific application users, in testing, etc.
+
+Note, that there is another comparable extension - [postgresql_anonymizer](https://postgresql-anonymizer.readthedocs.io/en/stable/) - which you might want to use instead.
 
 1. Go to your Tembo instance and enable the pg_anonymize extension. Also, you might need to load the extension manually (once, there was an issue on the Tembo end):
 
