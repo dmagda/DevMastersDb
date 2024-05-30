@@ -235,6 +235,29 @@ Bonus! With the [PgCompute library](https://github.com/dmagda/pg-compute-node) y
 
     Feel free to change the implementation of the `justDoThis()` function and restart the app. The new version of the function will be automatically deployed and executed on Postgres.
 
+```javascript
+function justDoItV2(name) {
+    const extensions = plv8.execute("select * from pg_extension");
+
+    const msg = `Hello ${name}! Check my extensions`;
+
+    return { msg: msg, extensions: extensions };
+}
+
+(async () => {
+    const client = new Client(dbEndpoint);
+    await client.connect();
+
+    const pgCompute = new PgCompute();
+    await pgCompute.init(client);
+
+    const res = await pgCompute.run(client, justDoItV2, "Denis");
+    console.log(res);
+
+    await client.end();
+})();
+```
+
 ## Number 3: Foreign Data Wrappers
 
 Postgres foreign data wrappers (FDWs) let Postgres access data stored in other systems - MySQL, flat files, Oracle, S3, MongoDB, and more data sources with services.
