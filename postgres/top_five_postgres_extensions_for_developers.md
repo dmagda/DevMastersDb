@@ -197,9 +197,6 @@ Bonus! With the [PgCompute library](https://github.com/dmagda/pg-compute-node) y
 
     ```javascript
     (async () => {
-        const openAI = new OpenAI({
-            apiKey: fs.readFileSync("/Users/dmagda/Downloads/openai.key").toString().trim()
-        });
         const client = new Client(dbEndpoint);
         await client.connect();
 
@@ -215,9 +212,6 @@ Bonus! With the [PgCompute library](https://github.com/dmagda/pg-compute-node) y
 
     ```javascript
     (async () => {
-        const openAI = new OpenAI({
-            apiKey: fs.readFileSync("/Users/dmagda/Downloads/openai.key").toString().trim()
-        });
         const client = new Client(dbEndpoint);
         await client.connect();
 
