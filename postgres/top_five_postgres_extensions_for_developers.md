@@ -345,8 +345,6 @@ Note, that there is another comparable extension - [postgresql_anonymizer](https
     CREATE ROLE test_user WITH LOGIN PASSWORD 'password' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
 
     GRANT CONNECT ON DATABASE postgres TO test_user;
-
-    GRANT SELECT ON TABLE user_account TO test_user;
     ```
 
 3. Ask pg_anonymize to anonimize data for the created user:
@@ -366,7 +364,12 @@ Create a table with the private user information and anonymize it for the create
 
 1. Load the schema from the `postgres/datasets/movies/V1.3__create_user_table.sql` file.
 
-2. Anonymize several columns:
+2. Grant the `test_user` access to the table:
+    ```sql
+    GRANT SELECT ON TABLE user_account TO test_user;
+    ```
+
+3. Anonymize several columns:
 
     ```sql
     SECURITY LABEL FOR pg_anonymize ON COLUMN public.user_account.email
