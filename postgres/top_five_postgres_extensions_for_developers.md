@@ -61,7 +61,10 @@ const dbEndpoint = {
     await client.connect();
 
     const res = await client.query("SELECT * FROM pg_extension");
-    console.log(res.rows);
+
+    res.rows.forEach(row => {
+        console.log(row.extname, row.extversion);
+    });
 
     await client.end();
 })();
