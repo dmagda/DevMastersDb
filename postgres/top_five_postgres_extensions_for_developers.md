@@ -110,28 +110,29 @@ Next, update the application logic to support the vector similarity search over 
 
     ```javascript
     (async () => {
-        const openAI = new OpenAI({
-            apiKey: fs.readFileSync("PATH_TO_YOUR_OPENAI_KEY/openai.key").toString().trim()
-        });
         const client = new Client(dbEndpoint);
         await client.connect();
-
-        await recommendMovies(client, openAI, "long long ago in a galaxy far far away");
-
+    
+        await recommendMovies(client, "long long ago in a galaxy far far away");
+    
         await client.end();
     })();
-
-    async function recommendMovies(client, openAI, prompt) {
+    
+    async function recommendMovies(client, prompt) {
+        const openAI = new OpenAI({
+            apiKey: fs.readFileSync("/Users/dmagda/Downloads/openai.key").toString().trim()
+        });
+    
         const promptEmbedding = await openAI.embeddings.create({
             model: "text-embedding-ada-002",
             input: prompt
         });
-
+    
         const result = await client.query("select title, overview from movie " +
             "where 1 - (overview_vector <=> $1) > 0.7 " +
             "order by 1 - (overview_vector <=> $1) desc limit 3",
             ['[' + promptEmbedding.data[0].embedding + ']']);
-
+    
         for (const row of result.rows) {
             console.log(row.title);
             console.log(row.overview, "\n");
