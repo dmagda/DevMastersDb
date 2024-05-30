@@ -303,43 +303,28 @@ In addition to the SQL interface, there are several client libraries that are bu
 
     ```javascript
     (async () => {
-        const client = new Client(dbEndpoint);
-        await client.connect();
+    const client = new Client(dbEndpoint);
+    await client.connect();
 
-        const queue = await Pgmq.new(dbEndpoint);
+    const myQueue = "my_queue";
 
-        await testQueue(queue);
+    pgmq = await Pgmq.new(dbEndpoint);
 
-        await client.end();
+    await pgmq.queue.create(myQueue);
 
-    })();
-
-    async function testQueue(pgmq) {
-        const myQueue = "postgres_queue";
-
-        await pgmq.queue.create(myQueue);
-        console.log("Queue created");
-
-        const msg = { id: 1, name: "first message" };
-        console.log("Sending message to queue");
-
-        const msgId = await pgmq.msg.send(myQueue, msg);
-        console.log("Message sent with id", msgId);
-
-        let msgReceived = await pgmq.msg.read(myQueue);
-        console.log("Message received", msgReceived);
-
-        msgReceived = await pgmq.msg.read(myQueue);
-        console.log("Message received", msgReceived);
-
-        msgReceived = await pgmq.msg.pop(myQueue);
-        console.log("Message poped", msgReceived);
-
-        msgReceived = await pgmq.msg.read(myQueue);
-        console.log("Message received", msgReceived);
-
-        await pgmq.queue.drop(myQueue);
+    for (let i = 0; i < 5; i++) {
+        await pgmq.msg.send(myQueue, { id: i, msg: `Hello, World! ${i}` });
     }
+
+
+    for (let i = 0; i < 5; i++) {
+        const msg = await pgmq.msg.pop(myQueue);
+        console.log(msg);
+    }
+
+    await pgmq.queue.drop(myQueue);
+    await client.end();
+    })();
     ```
 
 ## Number 1: pg_anonimize
