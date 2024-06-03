@@ -2,7 +2,8 @@
 
 In this guide, we'll work through the top five PostgreSQL extensions for application developers. We'll start with the most obvious extensions such as pgvector and go down to the least known such as pg_anonimyze.
 
-**Hands-On Video Tutorial: TBD**
+**Watch the Video**: <https://youtu.be/xNdNEPnw4DM>
+[![@DevMastersDB](https://github.com/dmagda/DevMastersDb/assets/1537233/d3fb098a-12e9-4c6c-a972-adf3bf1e93af)](https://youtu.be/xNdNEPnw4DM)
 
 ## Deploy Extensible Postgres in Cloud
 
